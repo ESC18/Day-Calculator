@@ -65,3 +65,7 @@ p {
     top: 41%;
     transform: translate(-50%,-50%);
 }
+
+textarea:focus, input:focus{
+    outline: none;
+}
