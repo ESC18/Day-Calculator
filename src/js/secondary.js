@@ -29,14 +29,14 @@ export function timePass(dateStr) {
     let hrDif = Math.floor(minDif / 60);
     let dayDif = Math.floor(hrDif / 24);
     let weekDif = Math.floor(dayDif / 7);
-    let yearDif = Math.floor((weekDif / 56) + 1);
-    return `${yearDif}/${weekDif}/${dayDif}/${hrDif}/${minDif}/${secDif}`;
+    let yearDif = Math.floor(weekDif / 52);
+    return `${yearDif.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Years, ${weekDif.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Weeks, ${dayDif.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Days, ${hrDif.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Hours, ${minDif.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Minutes, ${secDif.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Seconds.`;
 }
 
 function displayDate() {
     let input = document.getElementById("dateInput").value;
     let resultDiv = document.getElementById("resultDiv");
-    resultDiv.innerHTML = `The day of the week for <span style="color:lightBlue">${input}</span> is <span style="color:Blue">${dayCalc(input)}</span>. <br> The amount of <span style="color:orange">Years/Weeks/Days/Hours/Minutes/Seconds</span> since specified date are: <span style="color:Red">${timePass(input)}</span>`
+    resultDiv.innerHTML = `The day of the week for <span style="color:lightBlue">${input}</span> is <span style="color:#81F4E1">${dayCalc(input)}</span>. <br><br> The amount of time in Years, Weeks, Days, Hours, Minutes, and Seconds since specified date are:<br> <span style="color:Red">${timePass(input)}</span>`
 }
 
 export function initialization() {

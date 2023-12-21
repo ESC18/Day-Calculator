@@ -42,7 +42,7 @@ button {
     text-align: center;
     font-size: 20px;
     left: 50%;
-    top: 60%;
+    top: 65%;
     transform: translate(-50%,-50%);
 }
 
@@ -58,7 +58,7 @@ h1 {
 
 p {
     position: absolute;
-    width: 500px;
+    width: 1000px;
     text-align: center;
     font-size: 20px;
     left: 50%;
